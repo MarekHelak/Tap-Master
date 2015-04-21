@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-FB-auL">
+                                <rect key="frame" x="236" y="250" width="129" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="w0v-Ro-Edc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                <state key="normal" title="Tap!">
+                                    <color key="titleColor" red="0.59535435270000003" green="0.32321844500000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="w0v-Ro-Edc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="w0v-Ro-Edc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="tapAttack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="INT-ly-MWG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-5r-OQG">
+                                <rect key="frame" x="200" y="481" width="201" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="QPw-hi-TXo"/>
+                                    <constraint firstAttribute="height" constant="99" id="Y6y-NL-RO1"/>
+                                </constraints>
+                                <string key="text">Score:
+0</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypc-SB-Jnp">
+                                <rect key="frame" x="268" y="28" width="65" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="eYZ-DM-S68"/>
+                                    <constraint firstAttribute="width" constant="65" id="guc-KV-ClM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cr9-FB-auL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="230" id="1r3-1H-S4Y"/>
+                            <constraint firstItem="TS7-5r-OQG" firstAttribute="centerX" secondItem="cr9-FB-auL" secondAttribute="centerX" id="ax1-TZ-ekP"/>
+                            <constraint firstAttribute="bottom" secondItem="TS7-5r-OQG" secondAttribute="bottom" constant="20" symbolic="YES" id="cNO-Eo-8Ib"/>
+                            <constraint firstItem="cr9-FB-auL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ief-Ud-wq3"/>
+                            <constraint firstItem="ypc-SB-Jnp" firstAttribute="centerX" secondItem="cr9-FB-auL" secondAttribute="centerX" id="jSm-YS-hgz"/>
+                            <constraint firstItem="cr9-FB-auL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oZq-tj-OKv"/>
+                            <constraint firstItem="ypc-SB-Jnp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="z2V-GR-TGd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="justImportantTimer" destination="ypc-SB-Jnp" id="pED-Qc-UdZ"/>
+                        <outlet property="myCoolAndPreciousScore" destination="TS7-5r-OQG" id="qrv-jd-Mj8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="255" y="288"/>
         </scene>
     </scenes>
 </document>

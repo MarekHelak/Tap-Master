@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
 
+//Not such like object type
+int count;
+int sec;
+NSTimer *timer;
+
+//Little clear naming
+IBOutlet UILabel *justImportantTimer;
+IBOutlet UILabel *myCoolAndPreciousScore;
+
+}
+//Genius! This is click on the button
+-(IBAction)tapAttack:(id)sender;
 
 @end
 
