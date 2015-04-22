@@ -18,8 +18,8 @@ NSTimer *timer;
 //Little clear naming
 IBOutlet UILabel *justImportantTimer;
 IBOutlet UILabel *myCoolAndPreciousScore;
-
 }
+
 //Genius! This is click on the button
 -(IBAction)tapAttack:(id)sender;
 

@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 
-//Private methods
 @interface ViewController ()
 
+//Private methods
 -(void)restartGame;
 -(void)timeEvent;
 -(void)setGameOver;
@@ -41,11 +41,18 @@
     justImportantTimer.text = [NSString stringWithFormat:@"%i", sec];
     myCoolAndPreciousScore.text = [NSString stringWithFormat:@"Score:\n%i", count];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timeEvent) userInfo:nil repeats:YES];
+    //Set Timer
+    timer =
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+        target:self
+        selector:@selector(timeEvent)
+        userInfo:nil
+        repeats:YES];
 }
 
 //Event performing every second
 - (void)timeEvent{
+    
     sec--;
     justImportantTimer.text = [NSString stringWithFormat:@"%i", sec];
     
@@ -55,12 +62,29 @@
     }
 }
 
-//Creates alert body
+//Run Alert Dialog
 - (void)setGameOver{
   
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Over" message:[NSString stringWithFormat:@"You got %i points", count] delegate:self cancelButtonTitle:@"Play Again" otherButtonTitles:nil];
-    [alert show];
+    //Set Alert Controller
+    UIAlertController *alertController =
+        [UIAlertController
+        alertControllerWithTitle:@"Game Over"
+        message:[NSString stringWithFormat:@"You got %i points", count]
+        preferredStyle:UIAlertControllerStyleAlert];
+    
+    //Set Button
+    UIAlertAction *okActionButton = [UIAlertAction
+        actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+        style:UIAlertActionStyleDefault
+        handler:^(UIAlertAction *action)
+        {
+            [self restartGame];
+        }];
+    
+    //Merge Button with Alert Dialog
+    [alertController addAction:okActionButton];
+    [self presentViewController:alertController animated:true completion:nil];
+    
 }
-
 
 @end
